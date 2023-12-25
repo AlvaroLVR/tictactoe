@@ -41,6 +41,7 @@ let player2 = {
 let game = [[], [], [], [], [], [], [], [], []];
 let winner;
 let square;
+let tie = 0;
 
 /* Initial Values*/
 
@@ -123,6 +124,7 @@ let choose = (pos) => {
 
 /* game logica */
 function logical() {
+  
   /* horizontal line  */
   if (game[0] == game[1] && game[0] == game[2]) {
     strike = true;
@@ -151,9 +153,15 @@ function logical() {
     strike = true;
   }
   /* tie */
-  /* if (game[]) {
-    
-  } */
+  if (tie<=8) {
+    tie++;
+    if (tie == 9 ) {
+      tie = 0;
+      strike = true;
+      console.log('---EMPATE');
+    }
+    console.log('---tie',tie);
+  }
 }
 
 /* end game */
@@ -162,7 +170,7 @@ function endGame() {
   if (strike) {
     strike = false;
     game = [[], [], [], [], [], [], [], [], []];
-
+    tie = 0;
     allSquare = document.querySelectorAll("img");
 
     allSquare.forEach((element) => {

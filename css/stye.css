@@ -6,7 +6,7 @@
 
 /* titles and asides */
 main{
-    background-color: rgb(219, 214, 214);
+    background-color: rgba(219, 214, 214, 0.572);
     height: 100vh;
     display: grid;
     grid-template-columns: 20vw auto;
@@ -24,10 +24,8 @@ aside{
     grid-column: 1 /  2;
     grid-row: 1 / span 2;
     display: flex;
-    justify-content: center;
     align-self: center;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -50,7 +48,6 @@ ul>li{
     height: 67vh;
     width: 56vw;
     margin: 0 auto;
-    /* box-shadow: 60px 60px 60px 1px rgba(0, 0, 0, 0.2); */
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
@@ -63,6 +60,7 @@ ul>li{
     justify-content: center;
     align-items: center;
     background-color: azure;
+    border-radius: 6px;
     margin: 0;
     height: 100% !important;
     width: 100% !important;
@@ -72,4 +70,9 @@ img{
     margin: 0 !important;
     height: 3rem;
     width: 3rem;
+}
+
+a{
+    bottom: 1rem;
+    position: absolute;
 }
