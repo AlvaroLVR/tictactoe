@@ -4,8 +4,7 @@
  *
  * Thing to do
  * - Make a validator for the initial values
- * - Only one tipe choice on array game
- * - Clean all square when a player wins the game
+ * 
  *************************************************************************************************/
 let square1 = document.getElementById("square1");
 let square2 = document.getElementById("square2");
@@ -40,6 +39,7 @@ let player2 = {
 
 let game = [[], [], [], [], [], [], [], [], []];
 let winner;
+let square;
 
 /* Initial Values*/
 
@@ -56,7 +56,7 @@ let initial = () => {
 /* game */
 
 window.addEventListener("click", (e) => {
-  let square = e.target;
+  square = e.target;
   if (square.className == "square") {
     switch (square.id) {
       case "square1":
@@ -91,7 +91,7 @@ window.addEventListener("click", (e) => {
         break;
     }
     logical();
-    putImageInside(square);
+    
     endGame();
     console.log("---game", game[2]);
   }
@@ -105,16 +105,19 @@ let putImageInside = (square) => {
 };
 
 let choose = (pos) => {
-  if (flagTurn) {
-    /* turnBoolean = false; */
-    flagTurn = false;
-    turn.innerText = X;
-  } else {
-    /* turnBoolean = true; */
-    flagTurn = true;
-    turn.textContent = O;
+  if (game[pos] == '') {
+    if (flagTurn) {
+      /* turnBoolean = false; */
+      flagTurn = false;
+      turn.innerText = X;
+    } else {
+      /* turnBoolean = true; */
+      flagTurn = true;
+      turn.textContent = O;
+    }
+    game[pos] = turn.innerText;  
+    putImageInside(square); 
   }
-  game[pos] = turn.innerText
 };
 
 /* game logica */
