@@ -4,7 +4,8 @@
  *
  * Thing to do
  * - Make a validator for the initial values
- * 
+ * - Empate
+ * - Use localStorage for score, players and turn
  *************************************************************************************************/
 let square1 = document.getElementById("square1");
 let square2 = document.getElementById("square2");
@@ -51,7 +52,7 @@ let initial = () => {
   player2.type = prompt("Jugador 2: ¿Que elegís para jugar X/O?");
 };
 
-//initial();
+
 
 /* game */
 
@@ -149,6 +150,10 @@ function logical() {
   if (game[2] == game[4] && game[2] == game[6]) {
     strike = true;
   }
+  /* tie */
+  /* if (game[]) {
+    
+  } */
 }
 
 /* end game */

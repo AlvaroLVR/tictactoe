@@ -15,6 +15,7 @@ main{
 h1{
     padding: 2rem;
     display: flex;
+    font-size: 4rem;
     justify-content: center;
     grid-column: 1 / span 2;
     grid-row: 1;
@@ -25,6 +26,9 @@ aside{
     display: flex;
     justify-content: center;
     align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 ul{
@@ -32,34 +36,26 @@ ul{
 }
 
 ul>li{
-    font-size: xx-large;
-    margin: 0;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: row;
 }
 
 /* camp game */
-.game{
-    grid-column: 2 ;
-    grid-row: 2 ;
-}
+
 
 #game{
-    background-color: rgba(255, 0, 0, 0.804);
+    background-color: rgba(255, 255, 255, 0);
     height: 67vh;
     width: 56vw;
     margin: 0 auto;
-    box-shadow: 60px 60px 60px 1px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 60px 60px 60px 1px rgba(0, 0, 0, 0.2); */
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
     column-gap: .5rem;
     row-gap: .5rem;
-}
-
-.square{
-    height: 8rem;
-    width: 14rem;
 }
 
 #game>div{
@@ -67,10 +63,13 @@ ul>li{
     justify-content: center;
     align-items: center;
     background-color: azure;
-
+    margin: 0;
+    height: 100% !important;
+    width: 100% !important;
 }
 
 img{
+    margin: 0 !important;
     height: 3rem;
     width: 3rem;
 }
