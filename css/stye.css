@@ -1,0 +1,76 @@
+*{
+    margin: 0%;
+    box-sizing: content-box;
+    font-family: 'Single Day', cursive;
+}
+
+/* titles and asides */
+main{
+    background-color: rgb(219, 214, 214);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20vw auto;
+    grid-template-rows: 10vw auto;
+}
+h1{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+aside{
+    grid-column: 1 /  2;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+ul{
+    list-style: none;
+}
+
+ul>li{
+    font-size: xx-large;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+/* camp game */
+.game{
+    grid-column: 2 ;
+    grid-row: 2 ;
+}
+
+#game{
+    background-color: rgba(255, 0, 0, 0.804);
+    height: 67vh;
+    width: 56vw;
+    margin: 0 auto;
+    box-shadow: 60px 60px 60px 1px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: .5rem;
+    row-gap: .5rem;
+}
+
+.square{
+    height: 8rem;
+    width: 14rem;
+}
+
+#game>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+
+}
+
+img{
+    height: 3rem;
+    width: 3rem;
+}

@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/stye.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
     <title>TicTacToe</title>
 </head>
 <body>
-    <script src="../Tic-tac-toe/js/TicTacToe.js"></script>
-    <main >
+    <main>
+        <h1>TicTacToe</h1>
+        
+        <aside>
+            <ul>
+                <li>Time: <p  id="time"></p></li>
+                <li>Turn: <p id="turn"></p></li>
+                <li>Score: <p id="score"></p></li>
+            </ul>
+        </aside>
 
-    </main>
+        <div class="game">
+            <div id="game">
+                <div class="square"   id="square1"></div>
+                <div class="square"   id="square2"></div>
+                <div class="square"   id="square3"></div>
+                <div class="square"   id="square4"></div>
+                <div class="square"   id="square5"></div>
+                <div class="square"   id="square6"></div>
+                <div class="square"   id="square7"></div>
+                <div class="square"   id="square8"></div>
+                <div class="square"   id="square9"></div>
+            </div>
+        </div>
+    </main> 
+    
+    <script src="./js/TicTacToe.js"></script>
 </body>
 </html>
