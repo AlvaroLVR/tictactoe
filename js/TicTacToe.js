@@ -3,9 +3,9 @@
  * 12/2023
  *
  * Thing to do
- * - Make a validator for the initial values
- * - Empate
+ * - Score system
  * - Use localStorage for score, players and turn
+ * 
  *************************************************************************************************/
 let square1 = document.getElementById("square1");
 let square2 = document.getElementById("square2");
@@ -19,7 +19,9 @@ let square9 = document.getElementById("square9");
 
 let time = document.getElementById("time");
 let turn = document.getElementById("turn");
-let score = document.getElementById("score");
+
+let player1 = document.getElementById("player1");
+let player2 = document.getElementById("player2");
 
 let turnBoolean;
 let flagTurn = true;
@@ -29,12 +31,12 @@ let O = "O";
 let strike = false;
 let allSquare = [];
 
-let player1 = {
-  name: "",
+let playerOne = {
+  name: player1.value,
   type: "",
 };
-let player2 = {
-  name: "",
+let playerTwo = {
+  name: player2.value,
   type: "",
 };
 
@@ -42,23 +44,23 @@ let game = [[], [], [], [], [], [], [], [], []];
 let winner;
 let square;
 let tie = 0;
+let arrayComparative = [];
+let compare;
 
-/* Initial Values*/
+/* let clock = new Date(); */
 
-let initial = () => {
-  player1.name = prompt("Ingrese el nombre del Jugador 1");
-  player2.name = prompt("Ingrese el nombre del Jugador 2");
-
-  player1.type = prompt("Jugador 1: ¿Que elegís para jugar X/O?");
-  player2.type = prompt("Jugador 2: ¿Que elegís para jugar X/O?");
-};
+/* Values*/
 
 
 
 /* game */
+currentTime();
+/* initial(); */
+let sec = 0;
 
 window.addEventListener("click", (e) => {
   square = e.target;
+
   if (square.className == "square") {
     switch (square.id) {
       case "square1":
@@ -93,9 +95,7 @@ window.addEventListener("click", (e) => {
         break;
     }
     logical();
-    
     endGame();
-    console.log("---game", game[2]);
   }
 });
 
@@ -107,24 +107,28 @@ let putImageInside = (square) => {
 };
 
 let choose = (pos) => {
-  if (game[pos] == '') {
+  if (game[pos] == "") {
     if (flagTurn) {
-      /* turnBoolean = false; */
       flagTurn = false;
       turn.innerText = X;
     } else {
-      /* turnBoolean = true; */
       flagTurn = true;
-      turn.textContent = O;
+      turn.innerText = O;
     }
-    game[pos] = turn.innerText;  
-    putImageInside(square); 
+    game[pos] = turn.innerText;
+    putImageInside(square);
+    tie++;
+    compare = tie;
+  } else {
+    if (arrayComparative != game) {
+      arrayComparative = game;
+      tie = compare;
+    }
   }
 };
 
 /* game logica */
 function logical() {
-  
   /* horizontal line  */
   if (game[0] == game[1] && game[0] == game[2]) {
     strike = true;
@@ -153,14 +157,9 @@ function logical() {
     strike = true;
   }
   /* tie */
-  if (tie<=8) {
-    tie++;
-    if (tie == 9 ) {
-      tie = 0;
-      strike = true;
-      console.log('---EMPATE');
-    }
-    console.log('---tie',tie);
+  if (tie == 9) {
+    tie = 0;
+    strike = true;
   }
 }
 
@@ -176,5 +175,34 @@ function endGame() {
     allSquare.forEach((element) => {
       element.remove();
     });
+    console.log("---termino el juego");
   }
+}
+
+/* time */
+function currentTime() {
+  let date = new Date();
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+
+  if (hh == 0) {
+    hh = 12;
+  }
+  if (hh > 12) {
+    hh = hh - 12;
+    session = "PM";
+  }
+
+  hh = hh < 10 ? "0" + hh : hh;
+  mm = mm < 10 ? "0" + mm : mm;
+  ss = ss < 10 ? "0" + ss : ss;
+
+  let times = hh + ":" + mm + ":" + ss;
+
+  //time.innerText = times;
+  let t = setTimeout(function () {
+    currentTime();
+  }, 1000);
+  time.innerText = t;
 }

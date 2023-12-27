@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +10,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
     <title>TicTacToe</title>
 </head>
+
 <body>
     <main>
         <h1>TicTacToe</h1>
-        
+
         <aside>
             <ul>
-                <li>Time: <p  id="time"></p></li>
-                <li>Turn: <p id="turn"></p></li>
-                <li>Score: <p id="score"></p></li>
+                <li class="players">
+                    <p>Jugador 1</p>
+                    <input id="player1" type="text" name="firstName" placeholder="Ingrese su nombre">
+                    <div class="election">
+                        <button type="submit">X</button>
+                        <button type="submit">O</button>
+                    </div>
+                </li>
+                <li class="players">
+                    <p>Jugador 2 </p>
+                    <input id="player2" type="text" name="firstName" placeholder="Ingrese su nombre">
+                    <div class="election">
+                        <button type="submit">X</button>
+                        <button type="submit">O</button>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" id="save">Guardar</button>
+                </li>
+            </ul>
+            <ul>
+                <li>Time: <p id="time"></p>
+                </li>
+                <li>Turn: <p id="turn"></p>
+                </li>
+                <li>
+                    <button type="button" id="restart">Resetear</button>
+                </li>
             </ul>
             <a href="https://github.com/AlvaroLVR" target="_blank">Github</a>
         </aside>
 
         <div class="game">
             <div id="game">
-                <div class="square"   id="square1"></div>
-                <div class="square"   id="square2"></div>
-                <div class="square"   id="square3"></div>
-                <div class="square"   id="square4"></div>
-                <div class="square"   id="square5"></div>
-                <div class="square"   id="square6"></div>
-                <div class="square"   id="square7"></div>
-                <div class="square"   id="square8"></div>
-                <div class="square"   id="square9"></div>
+                <div class="square" id="square1"></div>
+                <div class="square" id="square2"></div>
+                <div class="square" id="square3"></div>
+                <div class="square" id="square4"></div>
+                <div class="square" id="square5"></div>
+                <div class="square" id="square6"></div>
+                <div class="square" id="square7"></div>
+                <div class="square" id="square8"></div>
+                <div class="square" id="square9"></div>
             </div>
+
         </div>
-    </main> 
+    </main>
     <script src="./js/TicTacToe.js"></script>
 </body>
+
 </html>

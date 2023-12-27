@@ -14,12 +14,13 @@ main{
 }
 h1{
     padding: 2rem;
-    display: flex;
-    font-size: 4rem;
+    display: grid;
+    font-size: 3.6rem;
     justify-content: center;
     grid-column: 1 / span 2;
     grid-row: 1;
 }
+
 aside{
     grid-column: 1 /  2;
     grid-row: 1 / span 2;
@@ -33,13 +34,38 @@ ul{
     list-style: none;
 }
 
+.players{
+    display: flex;
+    flex-direction: column !important;
+}
+.players>p{
+    font-size: xx-large;
+}
+
 ul>li{
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
+#save{
+    align-self: center;
+}
+
+button{
+    margin: .3rem;
+    font-size: medium;    
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.election{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-evenly;
+}
 /* camp game */
 
 
