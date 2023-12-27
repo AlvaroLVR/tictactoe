@@ -47,12 +47,6 @@ let tie = 0;
 let arrayComparative = [];
 let compare;
 
-/* let clock = new Date(); */
-
-/* Values*/
-
-
-
 /* game */
 currentTime();
 /* initial(); */
