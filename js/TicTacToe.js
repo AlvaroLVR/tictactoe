@@ -102,7 +102,7 @@ window.addEventListener("click", (e) => {
 let putImageInside = (square) => {
   let img = document.createElement("img");
   img.className = "img";
-  flagTurn ? (img.src = "../img/cruz.svg") : (img.src = "../img/circulo.svg");
+  flagTurn ? (img.src = "./img/cruz.svg") : (img.src = "./img/circulo.svg");
   square.append(img);
 };
 
